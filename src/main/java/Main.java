@@ -15,18 +15,18 @@ public class Main {
         water.addTraffic(new Boat());
         water.addTraffic(new MultiDrone());
 
-
         Road road = new Road();
         road.addTraffic(new Car());
         road.addTraffic(new Van());
         road.addTraffic(new Lorry());
         road.addTraffic(new MultiDrone());
+        road.addTraffic(new HGV());
 
         List<Environment<?>> environments = List.of(sky, water, road);
 
         for (Environment<?> environment: environments) {
-            //environment.checkTraffic();
-           environment.checkVehicles();
+            environment.checkTraffic();
+           //environment.checkVehicles();
         }
 
     }

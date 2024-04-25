@@ -13,15 +13,18 @@ public abstract class Environment<T> {
     }
 
     public void checkVehicles() {
+        String className;
         for (T item : traffic) {
+            className = this.getClass().getSimpleName();
 
             if (item instanceof Vehicle) {
 
-                if (item instanceof Driveable ) {
-                    System.out.println(item.getClass().getSimpleName() + " is driven!");
-                } else if (item instanceof Flyable) {
+                if (item instanceof Driveable && className.equals("Road")) {
+                    ((Vehicle) item).move();
+
+                } else if (item instanceof Flyable && className.equals("Sky")) {
                     System.out.println(item.getClass().getSimpleName() + " is flying!");
-                }else if (item instanceof Swimmable){
+                }else if (item instanceof Swimmable && className.equals("Water")){
                     System.out.println(item.getClass().getSimpleName() + " is driving in water!");
                 }
             }
