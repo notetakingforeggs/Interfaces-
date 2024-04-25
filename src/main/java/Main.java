@@ -3,6 +3,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Duck duck1 = new Duck();
+        duck1.swim();
+
         Sky sky = new Sky();
         sky.addTraffic(new Duck());
         sky.addTraffic(new Pigeon());
@@ -22,7 +25,10 @@ public class Main {
         road.addTraffic(new MultiDrone());
         road.addTraffic(new HGV());
 
-        List<Environment<?>> environments = List.of(sky, water, road);
+        Jungle jungle = new Jungle();
+        jungle.addTraffic(new Orangutan());
+
+        List<Environment<?>> environments = List.of(sky, water, road, jungle);
 
         for (Environment<?> environment: environments) {
             environment.checkTraffic();
